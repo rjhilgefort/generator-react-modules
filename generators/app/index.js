@@ -1,36 +1,35 @@
-'use strict';
-var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
 
 module.exports = Generator.extend({
-  prompting: function () {
+  prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the primo ' + chalk.red('generator-react-features') + ' generator!'
+      `Welcome to the primo ${chalk.red('generator-react-features')} generator!`,
     ));
 
-    var prompts = [{
+    const prompts = [{
       type: 'confirm',
       name: 'someAnswer',
       message: 'Would you like to enable this option?',
-      default: true
+      default: true,
     }];
 
-    return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    }.bind(this));
+    return this.prompt(prompts)
+      .then((props) => {
+        this.props = props;
+      });
   },
 
-  writing: function () {
+  writing() {
     this.fs.copy(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.destinationPath('dummyfile.txt'),
     );
   },
 
-  install: function () {
+  install() {
     this.installDependencies();
-  }
+  },
 });
