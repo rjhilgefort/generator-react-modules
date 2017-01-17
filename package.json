@@ -1,7 +1,7 @@
 {
-  "name": "generator-react-features",
-  "version": "0.0.0",
-  "description": "Yeoman generator for react features architecture",
+  "name": "generator-react-modules",
+  "version": "0.0.1",
+  "description": "Yeoman generator for react modules architecture",
   "homepage": "",
   "author": {
     "name": "Rob Hilgefort",
@@ -18,6 +18,7 @@
     "react",
     "blueprint",
     "feature",
+    "module",
     "component",
     "yeoman-generator"
   ],
@@ -50,11 +51,20 @@
       "xo-space",
       "airbnb-base"
     ],
+    "rules": {
+      "comma-dangle": ["error", {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }]
+    },
     "env": {
       "mocha": true
     }
   },
-  "repository": "rjhilgefort/generator-react-features",
+  "repository": "rjhilgefort/generator-react-modules",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
