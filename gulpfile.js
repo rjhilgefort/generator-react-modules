@@ -10,7 +10,11 @@ const coveralls = require('gulp-coveralls');
 
 gulp.task('static', () => gulp.src('**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint())
+    .pipe(eslint({
+      ecmaFeatures: { modules: true },
+      envs: ['browser', 'es6'],
+      parserOptions: { sourceType: 'module' }
+    }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError()));
 

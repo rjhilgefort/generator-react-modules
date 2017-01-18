@@ -7,14 +7,19 @@ First, install [Yeoman](http://yeoman.io) and generator-react-modules using [npm
 
 ```bash
 npm install -g yo
-npm install -g generator-reactmodules-
+npm install -g generator-react-modules
 ```
 
 Then generate your new project:
 
 ```bash
-yo reactmodules-
+yo react-modules
 ```
+
+## TODO
+
+- Fix tests- breaking on parse errors
+
 
 ## Getting To Know Yeoman
 

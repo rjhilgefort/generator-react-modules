@@ -1,18 +1,17 @@
-'use strict';
-var path = require('path');
-var assert = require('yeoman-assert');
-var helpers = require('yeoman-test');
 
-describe('generator-react-modules:module', function () {
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/module'))
-      .withPrompts({someAnswer: true})
-      .toPromise();
-  });
 
-  it('creates files', function () {
+const path = require('path');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
+
+describe('generator-react-modules:module', () => {
+  before(() => helpers.run(path.join(__dirname, '../generators/module'))
+      .withPrompts({ someAnswer: true })
+      .toPromise());
+
+  it('creates files', () => {
     assert.file([
-      'dummyfile.txt'
+      'dummyfile.txt',
     ]);
   });
 });
