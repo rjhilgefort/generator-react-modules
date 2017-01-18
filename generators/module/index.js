@@ -1,32 +1,18 @@
-const Generator = require('yeoman-generator');
 const R = require('ramda');
-const _ = require('lodash');
-const { modulesDir, moduleName } = require('../../lib/prompts');
+const Base = require('../../lib/Base');
 
 
-module.exports = class App extends Generator {
+module.exports = class extends Base {
+  get prompts() {
+    return ['modulesDir', 'moduleName'];
+  }
+
   prompting() {
-    return this.prompt([modulesDir, moduleName])
-      .then((props) => {
-        this.props = R.merge(
-          props,
-          {
-            moduleNameUpperFirst: _.upperFirst(props.moduleName),
-            modulePath: `${props.modulesDir}/${props.moduleName}`,
-          }
-        );
-      });
+    return super.prompting();
   }
 
   writing() {
-    const copy = (file) => {
-      this.fs.copyTpl(
-        this.templatePath(file),
-        this.destinationPath(`${this.props.modulePath}/${file}`),
-        this.props
-      );
-    };
-    R.forEach(copy)([
+    R.forEach(this.copy)([
       'components/index.js',
       'actionTypes.js',
       'actions.js',
