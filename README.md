@@ -12,24 +12,51 @@ npm install -g generator-react-modules
 
 ## Usage
 
-See below for available commands.
+##### Module Generation Notes
 
 ```bash
-# Generate a module
 yo react-modules
 yo react-modules:module
+```
 
-# Generate a presentation component
+- Your selections will be stored. This is useful if you are creating components right after creating the module. You can simply override it when moving on to the next module.
+
+##### Component Generation Notes
+
+```bash
 yo react-modules:component
-yo react-modules:presentation-component
+```
 
-# Generate a container component
+- Generates both a presentation and container component.
+- It is not required that you first create a module to create a component. The necessary folders will be created.
+- It is idiomatic to capitalize the first letter of your component. Thus, the generator takes care of that for you. If you don't want that, you'll have to rename the file yourself.
+- When creating a component, you'll be prompted about a conflict. This is simply the generator trying to append your new component to the `index.js` export list. `Y` should be the default and the option you want to have the append take place. There's no way to suppress this as far as I have found.
+
+##### Presentation Component Generation Notes
+
+```bash
+yo react-modules:presentation-component
+```
+
+- Generates just a presentation component and appends to the `index.js` list of components.
+
+
+##### Container Component Generation Notes
+
+```bash
 yo react-modules:container-component
 ```
 
+- Generates just a container component and appends to the `index.js` list of components.
+- Don't include the `Container` suffix- this will be taken care of for you.
+- A container component assumes a presentation component, but that presentation component doesn't have to exist already (and should be created seperately if desired).
+
+
 ## TODO
 
-- Fix tests- breaking on parse errors
+- Fix tests- breaking on parse errors.
+- Add CI.
+
 
 ## License
 
