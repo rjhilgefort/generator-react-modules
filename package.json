@@ -68,8 +68,8 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
-    "lint": "eslint ./generators gulpfile.js",
-    "lint-fix": "eslint ./generators gulpfile.js --fix"
+    "lint": "eslint ./",
+    "lint-fix": "eslint ./ --fix"
   },
   "license": "MIT"
 }
