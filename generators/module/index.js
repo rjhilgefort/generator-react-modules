@@ -3,6 +3,7 @@ const Base = require('../../lib/Base');
 
 
 module.exports = class extends Base {
+
   get prompts() {
     return ['modulesDir', 'moduleName'];
   }
