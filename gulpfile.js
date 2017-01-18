@@ -13,7 +13,7 @@ gulp.task('static', () => gulp.src('**/*.js')
     .pipe(eslint({
       ecmaFeatures: { modules: true },
       envs: ['browser', 'es6'],
-      parserOptions: { sourceType: 'module' }
+      parserOptions: { sourceType: 'module' },
     }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError()));
