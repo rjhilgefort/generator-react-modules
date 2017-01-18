@@ -12,7 +12,7 @@ npm install -g generator-react-modules
 
 ## Usage
 
-##### Module Generation Notes
+##### Module Generation
 
 ```bash
 yo react-modules
@@ -21,7 +21,7 @@ yo react-modules:module
 
 - Your selections will be stored. This is useful if you are creating components right after creating the module. You can simply override it when moving on to the next module.
 
-##### Component Generation Notes
+##### Component Generation
 
 ```bash
 yo react-modules:component
@@ -32,7 +32,7 @@ yo react-modules:component
 - It is idiomatic to capitalize the first letter of your component. Thus, the generator takes care of that for you. If you don't want that, you'll have to rename the file yourself.
 - When creating a component, you'll be prompted about a conflict. This is simply the generator trying to append your new component to the `index.js` export list. `Y` should be the default and the option you want to have the append take place. There's no way to suppress this as far as I have found.
 
-##### Presentation Component Generation Notes
+##### Presentation Component Generation
 
 ```bash
 yo react-modules:presentation-component
@@ -41,7 +41,7 @@ yo react-modules:presentation-component
 - Generates just a presentation component and appends to the `index.js` list of components.
 
 
-##### Container Component Generation Notes
+##### Container Component Generation
 
 ```bash
 yo react-modules:container-component
@@ -56,6 +56,8 @@ yo react-modules:container-component
 
 - Fix tests- breaking on parse errors.
 - Add CI.
+- Add architecture references and reading to readme.
+- Add sample structure diagram to readme.
 
 
 ## License
