@@ -1,4 +1,5 @@
 // @flow
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import <%= componentName %>Container from './<%= componentName %>Container';
@@ -9,6 +10,6 @@ it('renders without crashing', () => {
     <<%= componentName %>Container>
       <<%= componentName %> />
     </<%= componentName %>Container>,
-    document.createElement('div')
+    document.createElement('div'),
   );
 });

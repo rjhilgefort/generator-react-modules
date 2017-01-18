@@ -1,7 +1,7 @@
 // @flow
+import React from 'react';
 import { connect } from 'react-redux';
-const R = require('ramda');
-const _ = require('lodash');
+import R from 'ramda';
 import actions from '../actions';
 import <%= componentName %> from './<%= componentName %>';
 
@@ -12,13 +12,13 @@ const mapStateToProps = () => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   ___: () => R.pipe(
       actions.___,
-      dispatch
+      dispatch,
     )(ownProps),
 });
 
 const <%= componentName %>Container = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(<%= componentName %>);
 
-export default <%= componentName %>Container
+export default <%= componentName %>Container;
