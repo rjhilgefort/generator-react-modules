@@ -3,11 +3,12 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-react-modules using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-react-modules using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)). This generator augments an existing project and should be installed as a dev dependency.
 
 ```bash
 npm install -g yo
-npm install -g generator-react-modules
+cd ~/your/react/project
+npm install --save-dev generator-react-modules
 ```
 
 ## Usage
