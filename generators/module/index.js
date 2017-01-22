@@ -1,11 +1,9 @@
 const R = require('ramda');
 const Base = require('../../lib/Base');
 
-
 module.exports = class extends Base {
-
-  get prompts() {
-    return ['modulesDir', 'moduleName'];
+  get requiredProps() {
+    return ['moduleName', 'moduleNameUpperFirst', 'modulePath'];
   }
 
   prompting() {
@@ -13,7 +11,13 @@ module.exports = class extends Base {
   }
 
   writing() {
-    R.forEach(this.copy)([
+    R.forEach((file) => {
+      this.fs.copyTpl(
+        this.templatePath(file),
+        this.destinationPath(`${this.props.modulePath}/${file}`),
+        R.pick(['moduleName', 'moduleNameUpperFirst'], this.props)
+      );
+    }, [
       'components/index.js',
       'actionTypes.js',
       'actions.js',
