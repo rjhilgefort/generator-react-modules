@@ -1,10 +1,8 @@
 const Base = require('../../lib/Base');
 
-
 module.exports = class extends Base {
-
-  get prompts() {
-    return ['modulesDir', 'moduleName', 'componentName'];
+  get requiredProps() {
+    return ['modulePath', 'componentName'];
   }
 
   prompting() {
@@ -12,7 +10,11 @@ module.exports = class extends Base {
   }
 
   writing() {
-    this.copyComponent(true);
+    this.copyComponent({
+      templatePath: this.templatePath(),
+      modulePath: this.props.modulePath,
+      componentName: this.props.componentName,
+      componentFileName: `${this.props.componentName}Container`,
+    });
   }
-
 };
