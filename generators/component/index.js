@@ -1,5 +1,4 @@
 const R = require('ramda');
-const T = require('treis');
 const path = require('path');
 const Base = require('../../lib/Base');
 
@@ -14,7 +13,7 @@ module.exports = class extends Base {
 
   writing() {
     // To use this in our pipline, we need to return `params`
-    const copyComponentPipe = params => {
+    const copyComponentPipe = (params) => {
       this.copyComponent(params);
       return params;
     };
@@ -23,7 +22,7 @@ module.exports = class extends Base {
       R.pick(['modulePath', 'componentName']),
       // Generate presentation component
       R.merge(R.__, {
-        templatePath: path.resolve(`${__dirname}/../presentation-component/templates`)
+        templatePath: path.resolve(`${__dirname}/../presentation-component/templates`),
       }),
       copyComponentPipe,
       // Generate container component
